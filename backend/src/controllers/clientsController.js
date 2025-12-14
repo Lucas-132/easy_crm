@@ -1,5 +1,8 @@
-export const getAllClients = (req,res) => {
-    res.status(200).send("You just fetched all clients.");
+import { getAllClients } from "../config/db";
+
+export const getAllClients = async (req,res) => {
+    const clients = await Client.findAll();
+    res.json(clients);
 };
 
 export const createClient = (req, res) => {
