@@ -1,10 +1,12 @@
 import express from "express";
+import clientRoutes from "./src/routes/clientsRoutes.js"
 
 const app = express();
 
-app.get("/api/clients", (req, res) =>{
-    res.status(200).send("you got 20 clients");
-});
+app.use("/api/clients", clientRoutes);
+
+
+
 
 app.listen(5001, () => {
     console.log("Server launched successfully!");
