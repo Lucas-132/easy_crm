@@ -1,15 +1,12 @@
 import express from "express";
 import clientRoutes from "./routes/clientsRoutes.js";
-import  { connectDB } from "./database.js";
-import dotenv from "dotenv";
-
-dotenv.config();
+import { testDBConnection } from "./config/db.js";
 
 const app = express();
 
 app.use("/api/clients", clientRoutes);
 
-connectDB();
+testDBConnection();
 
 
 app.listen(5001, () => {
