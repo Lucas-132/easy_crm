@@ -1,3 +1,5 @@
+import { pool } from "../config/db.js";
+
 export const getAllClients = (req,res) => {
     res.status(200).send("You just fetched all clients.");
 };
